@@ -6,8 +6,8 @@ import { hashString } from "../utils/hash";
 
 export const registerHandlerBodySchema = z.object({
   name: z.string().trim(),
-  username: z.string().trim().min(8),
-  password: z.string().trim().min(8),
+  username: z.string().trim().min(4),
+  password: z.string().trim().min(6),
 });
 
 export const registerHandler: RequestHandler = async (req, res, next) => {

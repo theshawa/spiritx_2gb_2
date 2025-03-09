@@ -2,7 +2,7 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../auth/useAuth";
 import { getErrorMessage } from "../../backend/error";
 import { useSnackBar } from "../../snackbar";
@@ -91,6 +91,14 @@ export const LoginPage: FC = () => {
         >
           Login
         </Button>
+        <Typography variant="body2">
+          Don't have an account?{" "}
+          <Link to="/register">
+            <Typography color="textSecondary" component="span">
+              Register
+            </Typography>
+          </Link>
+        </Typography>
       </Stack>
     </Box>
   );
