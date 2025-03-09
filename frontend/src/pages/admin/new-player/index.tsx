@@ -57,7 +57,7 @@ export const AdminNewPlayerPage: FC = () => {
       reset();
     },
     onError: (err) => {
-      showSnackBar("error", `Unable to login: ${getErrorMessage(err)}`);
+      showSnackBar("error", `Unable to add player: ${getErrorMessage(err)}`);
     },
   });
 

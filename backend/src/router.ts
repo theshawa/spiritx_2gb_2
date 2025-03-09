@@ -3,10 +3,16 @@ import {
   createPlayerHandler,
   createPlayerHandlerBodySchema,
 } from "./handlers/create-player";
+import {
+  createTeamHandler,
+  createTeamHandlerBodySchema,
+} from "./handlers/create-team";
 import { getAccessTokenHandler } from "./handlers/get-access-token";
 import { getCategoriesHandler } from "./handlers/get-categories";
 import { getPlayerHandler } from "./handlers/get-player";
 import { getPlayersHandler } from "./handlers/get-players";
+import { getTeamHandler } from "./handlers/get-team";
+import { getTeamsHandler } from "./handlers/get-teams";
 import { getTournamentSummaryHandler } from "./handlers/get-tournament-summary";
 import { loginHandler, loginHandlerBodySchema } from "./handlers/login";
 import { logoutHandler } from "./handlers/logout";
@@ -55,3 +61,13 @@ router.get(
   authMiddleware(["admin"]),
   getTournamentSummaryHandler
 );
+
+router.post(
+  "/new-team",
+  authMiddleware(["user", "admin"]),
+  bodyValidatorMiddleware(createTeamHandlerBodySchema),
+  createTeamHandler
+);
+
+router.get("/teams", authMiddleware(["user"]), getTeamsHandler);
+router.get("/team", authMiddleware(["user"]), getTeamHandler);

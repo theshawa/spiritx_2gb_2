@@ -1,7 +1,7 @@
 import { RequestHandler } from "express";
 import { AppError } from "../lib/error";
 import { Player } from "../models/player";
-import { calculateStats } from "../utils/calculat-stats";
+import { calculateStats } from "../utils/calculate-stats";
 
 export const getPlayerHandler: RequestHandler = async (req, res) => {
   const { id } = req.params;
