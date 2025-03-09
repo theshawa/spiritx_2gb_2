@@ -70,4 +70,4 @@ router.post(
 );
 
 router.get("/teams", authMiddleware(["user"]), getTeamsHandler);
-router.get("/team", authMiddleware(["user"]), getTeamHandler);
+router.get("/team/:id", authMiddleware(["user"]), getTeamHandler);
