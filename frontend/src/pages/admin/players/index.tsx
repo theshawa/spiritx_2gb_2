@@ -74,14 +74,18 @@ export const AdminPlayersPage: FC = () => {
                     View Stats
                   </Button>
                 </Link>
-                <Link to={`/admin/edit-player/${player.id}`}>
-                  <Button size="small" color="primary">
-                    Edit
-                  </Button>
-                </Link>
-                <Button size="small" color="error">
-                  Delete
-                </Button>
+                {player.editable && (
+                  <>
+                    <Link to={`/admin/edit-player/${player.id}`}>
+                      <Button size="small" color="primary">
+                        Edit
+                      </Button>
+                    </Link>
+                    <Button size="small" color="error">
+                      Delete
+                    </Button>
+                  </>
+                )}
               </CardActions>
             </Card>
           </Grid2>

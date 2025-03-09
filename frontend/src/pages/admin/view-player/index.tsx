@@ -155,7 +155,7 @@ export const AdminViewPlayerPage: FC = () => {
                       : "success"
                   }
                 >
-                  {data.stats.points.toFixed(2)} / 100
+                  {data.stats.points.toFixed(2)}
                 </Typography>
               </TableCell>
             </TableRow>
@@ -172,14 +172,16 @@ export const AdminViewPlayerPage: FC = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Stack direction="row" spacing={2}>
-        <Button variant="outlined" size="small">
-          Edit
-        </Button>
-        <Button variant="outlined" size="small" color="error">
-          Delete
-        </Button>
-      </Stack>
+      {data.editable && (
+        <Stack direction="row" spacing={2}>
+          <Button variant="outlined" size="small">
+            Edit
+          </Button>
+          <Button variant="outlined" size="small" color="error">
+            Delete
+          </Button>
+        </Stack>
+      )}
     </Stack>
   );
 };

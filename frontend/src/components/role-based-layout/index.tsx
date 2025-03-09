@@ -18,6 +18,7 @@ export const RoleBasedLayout: FC<{
         sx={{ py: 3 }}
         display="flex"
         flexDirection="column"
+        minHeight="80vh"
       >
         <Toolbar />
         <Outlet />

@@ -108,16 +108,16 @@ export const AppBar: FC<{
                 <Button sx={{ color: "#fff" }}>{item.name}</Button>
               </Link>
             ))}
+            <Button
+              sx={{ color: "#fff" }}
+              onClick={() => {
+                logoutMutation.mutate();
+              }}
+              loading={logoutMutation.isPending}
+            >
+              Logout
+            </Button>
           </Box>
-          <Button
-            sx={{ color: "#fff" }}
-            onClick={() => {
-              logoutMutation.mutate();
-            }}
-            loading={logoutMutation.isPending}
-          >
-            Logout
-          </Button>
         </Toolbar>
       </_AppBar>
       <nav>
